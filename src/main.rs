@@ -42,8 +42,6 @@ fn main() {
         // Imprimir i
         println!("i: {}", i);
 
-
-
         // Imprimir el puntaje
         match puntuacion_1 {
             0 => println!("{}: Love", p1),
