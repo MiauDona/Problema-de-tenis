@@ -13,7 +13,7 @@ fn main() {
 
     // Inicializar contador
     let mut i = 0;
-    let mut puntaje = 0;
+    
     // Iniciar el juego. Mientras que ningun jugador supere el maximo de puntos, el juego continua
     while (puntuacion_1 <= max_value && puntuacion_2 <= max_value) || (puntuacion_1 == puntuacion_2) || (puntuacion_1 == puntuacion_2 + 1) || (puntuacion_1 + 1 == puntuacion_2) {
 
@@ -24,8 +24,15 @@ fn main() {
 
         // Guardar la jugada en el vector
         ganador = String::from(ganador.trim());
-        secuencia.push(ganador);
-        println!("Secuencia: {:?}", secuencia);
+        if ganador == p1 || ganador == p2 {
+            secuencia.push(ganador);
+            println!("Secuencia: {:?}", secuencia);
+        }
+        else {
+            println!("Jugada no válida");
+            continue;
+        }
+        
 
         // Si gana el jugador 1, se le suma un punto
         if secuencia[i] == p1 {
